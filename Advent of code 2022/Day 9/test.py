@@ -16,5 +16,13 @@
 # # difference of 0, difference of 0, same
 # # difference of abs(1), difference of abs(1), same
 
-# # difference of abs(2), difference of abs(1), T equals previous H
-# # difference of abs(1), difference of abs(2), T equals previous H
+# # difference of 2, difference of -1, x + 1 y - 1
+# # difference of 1, difference of -2, x + 1 y - 1
+# # difference of -2, difference of 1, x - 1 y + 1
+# # difference of -1, difference of 2, x - 1 y + 1
+# # difference of 2, difference of 1, x + 1 y + 1
+# # difference of 1, difference of 2, x + 1 y + 1
+# # difference of -2, difference of -1, x - 1 y - 1
+# # difference of -1, difference of -2, x - 1 y - 1
+
+

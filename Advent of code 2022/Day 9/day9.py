@@ -69,31 +69,35 @@ def tailmovements(input):
             tailmovementslist.append(T[:])
 # # difference of 2, difference of -1, x + 1 y - 1
 # # difference of 1, difference of -2, x + 1 y - 1
-        elif x - T[0] == 2 and y - T[1] == -1 or x - T[0] == 1 and y - T[1] == -2:
+        elif x - T[0] == 2 and y - T[1] == -1 or x - T[0] == 1 and y - T[1] == -2 or x - T[0] == 2 and y - T[1] == -2:
             T[0] += 1
             T[1] -= 1
             tailmovementslist.append(T[:])
 # # difference of -2, difference of 1, x - 1 y + 1
 # # difference of -1, difference of 2, x - 1 y + 1
-        elif x - T[0] == -2 and y - T[1] == 1 or x - T[0] == -1 and y - T[1] == 2:
+        elif x - T[0] == -2 and y - T[1] == 1 or x - T[0] == -1 and y - T[1] == 2 or x - T[0] == -2 and y - T[1] == 2:
             T[0] -= 1
             T[1] += 1
             tailmovementslist.append(T[:])
 # # difference of 2, difference of 1, x + 1 y + 1
 # # difference of 1, difference of 2, x + 1 y + 1
-        elif x - T[0] == 2 and y - T[1] == 1 or x - T[0] == 1 and y - T[1] == 2:
+# # difference of 2, difference of 2, x + 1 y + 1
+        elif x - T[0] == 2 and y - T[1] == 1 or x - T[0] == 1 and y - T[1] == 2 or x - T[0] == 2 and y - T[1] == 2:
             T[0] += 1
             T[1] += 1
             tailmovementslist.append(T[:])
 # # difference of -2, difference of -1, x - 1 y - 1
 # # difference of -1, difference of -2, x - 1 y - 1
-        elif x - T[0] == -2 and y - T[1] == -1 or x - T[0] == -1 and y - T[1] == -2:
+# # difference of -2, difference of -2, x + 1 y + 1
+        elif x - T[0] == -2 and y - T[1] == -1 or x - T[0] == -1 and y - T[1] == -2 or x - T[0] == -2 and y - T[1] == -2:
             T[0] -= 1
             T[1] -= 1
             tailmovementslist.append(T[:])
+        else:
+            print(f"Skipping this movement {headpostion=} and tail is at {T}")
 
     return tailmovementslist
-        
+
 def uniquecount(input):
     uniquelist = []
     for x in input:
@@ -103,60 +107,37 @@ def uniquecount(input):
 
 # print('Unique locations visited: ' + str(uniquecount(tailmovements(headmovements(input)))))
 
+
+
 # part 2 solution
-firstinput = headmovements(exampleinput)
+firstinput = headmovements(input)
 print()
-print(firstinput)
+print(len(firstinput))
 secondinput = tailmovements(firstinput)
 print()
-print(secondinput)
+print(len(secondinput))
 thirdinput = tailmovements(secondinput)
 print()
-print(thirdinput)
+print(len(thirdinput))
 fourthinput = tailmovements(thirdinput)
 print()
-print(fourthinput)
+print(len(fourthinput))
 fifthinput = tailmovements(fourthinput)
 print()
-print(fifthinput)
+print(len(fifthinput))
 sixthinput = tailmovements(fifthinput)
 print()
-print(sixthinput)
-
-print(tailmovements(sixthinput))
+print(len(sixthinput))
+seventhinput = tailmovements(sixthinput)
 print()
-# eighthinput = tailmovements(seventhinput)
-# print()
-# print(eighthinput)
-# ninthinput = tailmovements(eighthinput)
-# print()
-# print(ninthinput)
-# tenthinput = tailmovements(ninthinput)
-# print()
-# print(tenthinput)
-# print(uniquecount(tenthinput))
-
-# print(headmovements(exampleinput))
-
-
-# def tailmovements(input):
-#     tailmovementslist = []
-#     headindex = 0
-#     for headpostion in input:
-#         x, y = headpostion
-#         if x - T[0] == 2 and y - T[1] == 0 or x - T[0] == -abs(2) and y - T[1] == 0:
-#             T[0] += int((1 * ((x - T[0]) / 2)))
-#             tailmovementslist.append(T[:])
-#             headindex += 1
-#         elif x - T[0] == 0 and y - T[1] == 2 or x - T[0] == 0 and y - T[1] == -abs(2):
-#             T[1] += int((1 * ((y - T[1]) / 2)))
-#             tailmovementslist.append(T[:])
-#             headindex += 1
-#         elif abs(x - T[0]) == 1 and abs(y - T[1]) == 0 or abs(x - T[0]) == 0 and abs(y - T[1]) == 1 or abs(x - T[0]) == 0 and abs(y - T[1]) == 0 or abs(x - T[0]) == 1 and abs(y - T[1]) == 1:
-#             tailmovementslist.append(T[:])
-#             headindex += 1
-#         elif abs(x - T[0]) == 2 and abs(y - T[1]) == 1 or abs(x - T[0]) == 1 and abs(y - T[1]) == 2:
-#             T[0] = input[headindex-1][0]
-#             T[1] = input[headindex-1][1]
-#             tailmovementslist.append(T[:])
-#             headindex += 1
+print(len(seventhinput))
+eighthinput = tailmovements(seventhinput)
+print()
+print(len(eighthinput))
+ninthinput = tailmovements(eighthinput)
+print()
+print(len(ninthinput))
+tenthinput = tailmovements(ninthinput)
+print()
+print(len(tenthinput))
+print(uniquecount(tenthinput))
